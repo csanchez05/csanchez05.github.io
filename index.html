@@ -12,40 +12,38 @@
         html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-[#0f172a] text-slate-300 font-sans">
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="bg-[#0f172a] shadow-sm sticky top-0 z-50 border-b border-slate-800/50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <span class="text-xl font-bold text-indigo-900 tracking-tight">Calvin Sanchez</span>
+                    <span class="text-xl font-bold text-indigo-400 tracking-tight">Calvin Sanchez</span>
                 </div>
+                <!-- Links removed as requested -->
                 <div class="flex items-center space-x-6">
-                    <a href="#about" class="text-gray-600 hover:text-indigo-600 transition">About</a>
-                    <a href="#research" class="text-gray-600 hover:text-indigo-600 transition">Research</a>
-                    <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-white">
-        <div class="max-w-6xl mx-auto px-4 py-24 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+    <header class="bg-[#0f172a] relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 py-24 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center relative z-10">
             <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
-                    Bridging <span class="text-indigo-600">Topology, ML,</span> & <span class="text-indigo-600">High Energy Physics</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+                    Bridging <span class="text-indigo-400">Topology, ML,</span> & <span class="text-indigo-400">High Energy Physics</span>
                 </h1>
-                <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+                <p class="text-lg text-slate-400 mb-8 max-w-lg mx-auto md:mx-0">
                     Undergraduate Researcher & USMC Reservist.<br>
                     Building data-driven pipelines to discover topological phases in quantum materials and simulating particle detectors for high-energy physics.
                 </p>
                 <div class="flex justify-center md:justify-start space-x-4">
-                    <a href="#contact" class="px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition shadow-lg transform hover:-translate-y-0.5">
+                    <a href="#contact" class="px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-500 transition shadow-lg transform hover:-translate-y-0.5 border border-transparent">
                         Get in Touch
                     </a>
-                    <a href="https://github.com/" target="_blank" class="px-8 py-3 bg-white border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition shadow-sm">
+                    <a href="https://github.com/" target="_blank" class="px-8 py-3 bg-slate-800 border border-slate-700 text-slate-300 font-medium rounded-lg hover:bg-slate-700 transition shadow-sm">
                         <i class="fab fa-github mr-2"></i> GitHub
                     </a>
                 </div>
@@ -54,19 +52,33 @@
             <!-- Photo Section -->
             <div class="md:w-1/2 flex justify-center relative">
                 <div class="relative w-72 h-72 md:w-96 md:h-96">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-purple-600 rounded-full blur-lg opacity-60 transform translate-y-4"></div>
+                    <!-- Glow effect -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-purple-600 rounded-full blur-2xl opacity-40 transform translate-y-4"></div>
                     <img 
                         src="MY_HEADSHOT.jpg" 
                         alt="Calvin Sanchez" 
-                        class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-2xl z-10"
+                        class="relative w-full h-full object-cover rounded-full border-4 border-slate-800 shadow-2xl z-10"
                     >
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">About Me</h2>
+            <p class="text-lg text-slate-400 leading-relaxed mb-6">
+                I am a Physics and Mathematics double major driven by the challenge of modeling complex physical systems. My work focuses on the intersection of theoretical physics and advanced computation.
+            </p>
+            <p class="text-lg text-slate-400 leading-relaxed">
+                Currently, I am investigating <strong>Topological Weyl Semimetals</strong> using a custom Machine Learning pipeline to screen thousands of grain boundary interfaces. My broader ambition is to pivot these high-performance computing skills toward <strong>High Energy Particle Physics</strong>, contributing to experimental analysis at major facilities like CERN or Fermilab.
+            </p>
+        </div>
+    </section>
+
     <!-- Research & Projects Section (Dark Theme) -->
-    <section id="research" class="py-24 bg-[#0f172a] text-white">
+    <section id="research" class="py-24 bg-[#0f172a]">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Research & Projects</h2>
@@ -79,22 +91,22 @@
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-1/2 w-full">
                         <!-- Placeholder for Project Image -->
-                        <div class="aspect-video bg-gradient-to-br from-indigo-900 to-slate-800 rounded-xl shadow-2xl flex items-center justify-center border border-indigo-500/30 overflow-hidden group">
+                        <div class="aspect-video bg-gradient-to-br from-indigo-900/50 to-slate-800 rounded-xl shadow-2xl flex items-center justify-center border border-indigo-500/30 overflow-hidden group">
                             <!-- You can replace this div with an <img> tag later -->
                             <i class="fas fa-atom text-6xl text-indigo-400 group-hover:scale-110 transition duration-500"></i>
                         </div>
                     </div>
                     <div class="md:w-1/2 w-full">
                         <h3 class="text-2xl font-bold text-white mb-4">ML-Driven Discovery in Chiral Magnets</h3>
-                        <p class="text-slate-300 leading-relaxed mb-6">
+                        <p class="text-slate-400 leading-relaxed mb-6">
                             Investigating how grain boundary geometry affects Weyl points and DMI in B20 CoGe. 
                             I developed a Python pipeline to analyze <strong>~13,000 interface structures</strong> using physics-aware <strong>SOAP descriptors</strong>. 
                             By leveraging <strong>UMAP</strong> and <strong>HDBSCAN</strong> for unsupervised clustering, I identified representative candidates for high-fidelity <strong>VASP DFT</strong> calculations.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-sm font-semibold rounded-full border border-indigo-500/30">Python</span>
-                            <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-sm font-semibold rounded-full border border-indigo-500/30">Machine Learning</span>
-                            <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-sm font-semibold rounded-full border border-indigo-500/30">DFT / VASP</span>
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-300 text-sm font-semibold rounded-full border border-indigo-500/20">Python</span>
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-300 text-sm font-semibold rounded-full border border-indigo-500/20">Machine Learning</span>
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-300 text-sm font-semibold rounded-full border border-indigo-500/20">DFT / VASP</span>
                         </div>
                         <a href="#" class="inline-block px-6 py-2 bg-[#fbbf24] text-gray-900 font-bold rounded hover:bg-[#f59e0b] transition">
                             View Analysis
@@ -106,22 +118,22 @@
                 <div class="flex flex-col md:flex-row-reverse items-center gap-12">
                     <div class="md:w-1/2 w-full">
                         <!-- Placeholder for REU Poster Image -->
-                        <div class="aspect-video bg-gradient-to-bl from-emerald-900 to-slate-800 rounded-xl shadow-2xl flex items-center justify-center border border-emerald-500/30 overflow-hidden group">
+                        <div class="aspect-video bg-gradient-to-bl from-emerald-900/50 to-slate-800 rounded-xl shadow-2xl flex items-center justify-center border border-emerald-500/30 overflow-hidden group">
                             <!-- Ideally, put a crop of your poster here -->
                             <i class="fas fa-layer-group text-6xl text-emerald-400 group-hover:scale-110 transition duration-500"></i>
                         </div>
                     </div>
-                    <div class="md:w-1/2 w-full text-left md:text-right"> <!-- Align text right for zig-zag feel -->
+                    <div class="md:w-1/2 w-full text-left md:text-right"> 
                         <h3 class="text-2xl font-bold text-white mb-4">Screening for Endotaxial Materials</h3>
-                        <p class="text-slate-300 leading-relaxed mb-6">
+                        <p class="text-slate-400 leading-relaxed mb-6">
                             <strong>NSF REU at University of Michigan:</strong> Endotaxial heterostructures utilize layer-by-layer switching in polytypic materials to create stable quantum states. 
                             I developed an <strong>elastic screening workflow</strong> to predict temperature-driven phase transitions in Transition Metal Dichalcogenides (TMDs), significantly reducing the computational cost compared to traditional phonon calculations.
                         </p>
                         <!-- Tags aligned to the right -->
                         <div class="flex flex-wrap gap-2 mb-8 justify-start md:justify-end">
-                            <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 text-sm font-semibold rounded-full border border-emerald-500/30">Thermodynamics</span>
-                            <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 text-sm font-semibold rounded-full border border-emerald-500/30">Elastic Tensors</span>
-                            <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 text-sm font-semibold rounded-full border border-emerald-500/30">Pymatgen</span>
+                            <span class="px-3 py-1 bg-emerald-500/10 text-emerald-300 text-sm font-semibold rounded-full border border-emerald-500/20">Thermodynamics</span>
+                            <span class="px-3 py-1 bg-emerald-500/10 text-emerald-300 text-sm font-semibold rounded-full border border-emerald-500/20">Elastic Tensors</span>
+                            <span class="px-3 py-1 bg-emerald-500/10 text-emerald-300 text-sm font-semibold rounded-full border border-emerald-500/20">Pymatgen</span>
                         </div>
                         <a href="Calvin REU Poster_WS (1).pdf" target="_blank" class="inline-block px-6 py-2 bg-[#fbbf24] text-gray-900 font-bold rounded hover:bg-[#f59e0b] transition">
                             View Poster
@@ -133,21 +145,21 @@
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-1/2 w-full">
                         <!-- Placeholder -->
-                        <div class="aspect-video bg-gradient-to-br from-rose-900 to-slate-800 rounded-xl shadow-2xl flex items-center justify-center border border-rose-500/30 overflow-hidden group">
+                        <div class="aspect-video bg-gradient-to-br from-rose-900/50 to-slate-800 rounded-xl shadow-2xl flex items-center justify-center border border-rose-500/30 overflow-hidden group">
                             <i class="fas fa-magnet text-6xl text-rose-400 group-hover:scale-110 transition duration-500"></i>
                         </div>
                     </div>
                     <div class="md:w-1/2 w-full">
                         <h3 class="text-2xl font-bold text-white mb-4">Antimatter Detector Simulation</h3>
-                        <p class="text-slate-300 leading-relaxed mb-6">
+                        <p class="text-slate-400 leading-relaxed mb-6">
                             Optimizing detector placement is critical for capturing rare muon events. 
                             I utilize <strong>Monte Carlo simulations</strong> to predict the angular distribution of particles passing through magnetic fields. 
                             Using the <strong>Scikit-HEP</strong> ecosystem and <strong>ROOT</strong>, I analyze simulation data to maximize detection efficiency for our single-detector setup.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="px-3 py-1 bg-rose-500/20 text-rose-300 text-sm font-semibold rounded-full border border-rose-500/30">C++ / ROOT</span>
-                            <span class="px-3 py-1 bg-rose-500/20 text-rose-300 text-sm font-semibold rounded-full border border-rose-500/30">Monte Carlo</span>
-                            <span class="px-3 py-1 bg-rose-500/20 text-rose-300 text-sm font-semibold rounded-full border border-rose-500/30">Particle Physics</span>
+                            <span class="px-3 py-1 bg-rose-500/10 text-rose-300 text-sm font-semibold rounded-full border border-rose-500/20">C++ / ROOT</span>
+                            <span class="px-3 py-1 bg-rose-500/10 text-rose-300 text-sm font-semibold rounded-full border border-rose-500/20">Monte Carlo</span>
+                            <span class="px-3 py-1 bg-rose-500/10 text-rose-300 text-sm font-semibold rounded-full border border-rose-500/20">Particle Physics</span>
                         </div>
                         <a href="#" class="inline-block px-6 py-2 bg-[#fbbf24] text-gray-900 font-bold rounded hover:bg-[#f59e0b] transition">
                             Learn More
@@ -160,35 +172,35 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-white">
+    <section id="contact" class="py-24 bg-slate-900 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-12">Contact Information</h2>
+            <h2 class="text-3xl font-bold text-white mb-12">Contact Information</h2>
             <div class="flex justify-center space-x-12">
                 <a href="mailto:calvinsanchez@usf.edu" class="flex flex-col items-center group">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 group-hover:bg-indigo-600 group-hover:text-white transition duration-300 shadow-md">
+                    <div class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 group-hover:bg-indigo-600 group-hover:text-white transition duration-300 shadow-md ring-1 ring-slate-700">
                         <i class="fas fa-envelope text-2xl"></i>
                     </div>
-                    <span class="mt-4 text-gray-600 font-medium group-hover:text-indigo-600 transition">Email</span>
+                    <span class="mt-4 text-slate-400 font-medium group-hover:text-indigo-400 transition">Email</span>
                 </a>
                 <a href="#" class="flex flex-col items-center group">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 group-hover:bg-blue-600 group-hover:text-white transition duration-300 shadow-md">
+                    <div class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition duration-300 shadow-md ring-1 ring-slate-700">
                         <i class="fab fa-linkedin-in text-2xl"></i>
                     </div>
-                    <span class="mt-4 text-gray-600 font-medium group-hover:text-blue-600 transition">LinkedIn</span>
+                    <span class="mt-4 text-slate-400 font-medium group-hover:text-blue-400 transition">LinkedIn</span>
                 </a>
                 <a href="#" class="flex flex-col items-center group">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 group-hover:bg-gray-900 group-hover:text-white transition duration-300 shadow-md">
+                    <div class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 group-hover:bg-slate-700 group-hover:text-white transition duration-300 shadow-md ring-1 ring-slate-700">
                         <i class="fab fa-github text-2xl"></i>
                     </div>
-                    <span class="mt-4 text-gray-600 font-medium group-hover:text-gray-900 transition">GitHub</span>
+                    <span class="mt-4 text-slate-400 font-medium group-hover:text-white transition">GitHub</span>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 py-8 border-t border-gray-200">
-        <div class="max-w-5xl mx-auto px-4 text-center text-gray-500 text-sm">
+    <footer class="bg-[#0f172a] py-8 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 text-center text-slate-500 text-sm">
             <p>&copy; 2025 Calvin Sanchez. Hosted on GitHub Pages.</p>
         </div>
     </footer>
