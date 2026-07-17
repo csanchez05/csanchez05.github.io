@@ -1,0 +1,7 @@
+Add your artwork to this folder with these names:
+
+artwork-01.png
+artwork-02.png
+artwork-03.png
+
+The gallery frames will fill automatically when those files exist.

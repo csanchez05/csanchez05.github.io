@@ -1,302 +1,200 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calvin</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background: #121212;
-      color: #e6e6e6;
-      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.65;
-    }
-
-    a { color: #4fc3f7; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    nav {
-      display: flex;
-      justify-content: flex-end;
-      gap: 28px;
-      padding: 28px 48px;
-      font-size: 1.05rem;
-    }
-    nav a.active { color: #4fc3f7; }
-    nav a { color: #e6e6e6; }
-    nav a:hover { color: #4fc3f7; text-decoration: none; }
-
-    .container {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 30px 40px 80px;
-    }
-
-    .intro {
-      display: flex;
-      gap: 50px;
-      align-items: flex-start;
-    }
-    .intro-text { flex: 1; }
-
-    h1 {
-      font-size: 3.2rem;
-      font-weight: 400;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      font-size: 1.25rem;
-      margin-bottom: 28px;
-    }
-
-    .intro-text p { margin-bottom: 22px; font-size: 1.1rem; }
-
-    .photo { flex-shrink: 0; width: 320px; }
-    .photo img { width: 100%; border-radius: 6px; display: block; }
-    .photo-placeholder {
-      display: none;
-      width: 100%;
-      height: 320px;
-      border-radius: 6px;
-      background: #1e1e1e;
-      border: 1px dashed #555;
-      color: #888;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 0.95rem;
-      padding: 20px;
-    }
-
-    h2 {
-      font-size: 2.4rem;
-      font-weight: 400;
-      margin: 70px 0 35px;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-
-    .card {
-      background: #ffffff;
-      color: #1a1a1a;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .card svg { width: 100%; height: auto; display: block; }
-    .card img.fig {
-      width: 100%;
-      height: 230px;
-      object-fit: contain;
-      background: #ffffff;
-      display: block;
-    }
-    .fig-fallback {
-      display: none;
-      height: 230px;
-      margin: 12px;
-      border: 1px dashed #bbb;
-      border-radius: 6px;
-      color: #999;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 0.9rem;
-      padding: 16px;
-    }
-    .card.wide { grid-column: 1 / -1; }
-    .figrow { display: flex; }
-    .figrow > * { flex: 1; min-width: 0; }
-    @media (max-width: 900px) { .figrow { flex-direction: column; } }
-    .card-body { padding: 18px 22px 24px; }
-    .card-body h3 { font-size: 1.15rem; margin-bottom: 8px; }
-    .card-body p { font-size: 0.95rem; color: #444; }
-
-    @media (max-width: 900px) {
-      .intro { flex-direction: column; }
-      .photo { width: 100%; max-width: 360px; }
-      .projects { grid-template-columns: 1fr; }
-      h1 { font-size: 2.4rem; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calvin — Physics, Mathematics &amp; Making Things</title>
+  <meta name="description" content="Calvin's research portfolio: topological materials, scientific computing, particle detectors, data visualization, and artwork.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calvin — Physics, Mathematics &amp; Making Things">
+  <meta property="og:description" content="Topological materials, scientific computing, particle detectors, data visualization, and artwork.">
+  <meta property="og:image" content="https://csanchez05.github.io/og.png">
+  <meta property="og:url" content="https://csanchez05.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calvin — Physics, Mathematics &amp; Making Things">
+  <meta name="twitter:description" content="Topological materials, scientific computing, particle detectors, data visualization, and artwork.">
+  <meta name="twitter:image" content="https://csanchez05.github.io/og.png">
+  <link rel="icon" href="research/particle-burst.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <main>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Calvin, back to top">CALVIN<span>&#8599;</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#graphs">Cool graphs</a>
+        <a href="#art">Artwork</a>
+      </nav>
+    </header>
 
-  <nav>
-    <a href="#about" class="active">About</a>
-    <a href="#projects">Projects</a>
-  </nav>
-
-  <div class="container">
-
-    <section id="about" class="intro">
-      <div class="intro-text">
-        <h1>Calvin</h1>
-        <p class="subtitle">Physics &amp; Math Undergraduate at the University of South Florida</p>
-
-        <p>B.S. Physics and B.A. Mathematics (pure concentration) at the
-        University of South Florida, expected 2028. I work in computational
-        condensed matter physics and experimental particle physics.</p>
-
-        <p>I am a member of the Quantum Chiraltronics Group at USF, studying
-        how grain boundary geometry affects Weyl points, electron transport, 
-        and surface states in topological chiral intermetallics. I use density 
-        functional theory and Wannier-based tight-binding models to predict
-        which boundaries and twin interfaces host topologically protected 
-        electronic states.</p>
-
-        <p>My scientific interests center on connecting crystal symmetry to
-        observable electronic structure: classifying interfaces by their
-        symmetry operations, tracking the chiral charges of multifold band
-        nodes, and turning expensive quantum simulations into cheap,
-        physically transparent models.</p>
-
-        <p>Alongside theory work, I build and simulate hardware. I am
-        developing a <strong>two-counter scintillator cosmic-ray muon telescope</strong>
-        with a permanent-magnet spectrometer for charge discrimination,
-        designed end-to-end in a <a href="https://geant4.web.cern.ch/">Geant4</a>
-        Monte Carlo simulation before construction.</p>
-
-        <p>Looking ahead, I aspire to develop the computational methods that
-        make <strong>high-throughput, machine-learning-driven materials
-        discovery</strong> practical. Interface and boundary calculations are
-        among the most difficult and handcrafted problems in computational
-        condensed matter; my goal is to build symmetry-aware machine learning
-        models that learn electronic structure directly from first-principles
-        data &mdash; turning months of calculation into seconds of inference
-        without giving up the physics.</p>
+    <section class="hero" id="top">
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="kicker">Physics / mathematics / making things</p>
+        <h1>I follow structures<br>until they tell a <em>story.</em></h1>
+        <div class="hero-bottom">
+          <p>I&rsquo;m Calvin, a physics and pure mathematics undergraduate at the University of South Florida. I work where crystal symmetry, computation, and experimental hardware meet.</p>
+          <a class="round-link" href="#work" aria-label="See selected work">See the work<span>&darr;</span></a>
+        </div>
       </div>
+      <p class="hero-coordinate">EVENT VIEW / 3342348</p>
+    </section>
 
-      <div class="photo">
-        <!-- Put photo.jpg next to this file in your repo -->
-        <img src="MY_HEADSHOT.jpg" alt="Calvin"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <section class="marquee" aria-label="Areas of interest">
+      <div>
+        <span>TOPOLOGICAL MATERIALS</span><i>&#10022;</i>
+        <span>SCIENTIFIC COMPUTING</span><i>&#10022;</i>
+        <span>PARTICLE DETECTORS</span><i>&#10022;</i>
+        <span>DATA VISUALIZATION</span><i>&#10022;</i>
       </div>
     </section>
 
-    <h2 id="projects">Selected Projects</h2>
-
-    <div class="projects">
-
-      <div class="card">
-        <!-- Replace this SVG with a real figure: <img src="b20.png"> -->
-        <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="220" fill="#ffffff"/>
-          <line x1="50" y1="180" x2="370" y2="180" stroke="#333" stroke-width="1.5"/>
-          <line x1="50" y1="180" x2="50" y2="25" stroke="#333" stroke-width="1.5"/>
-          <text x="200" y="205" font-size="12" fill="#333" text-anchor="middle">k&#772; (interface BZ)</text>
-          <text x="30" y="105" font-size="12" fill="#333" text-anchor="middle" transform="rotate(-90 30 105)">E &#8722; E&#8342;</text>
-          <path d="M50,60 Q140,95 210,102 T370,140" fill="none" stroke="#888" stroke-width="2"/>
-          <path d="M50,160 Q140,125 210,118 T370,80" fill="none" stroke="#888" stroke-width="2"/>
-          <path d="M85,180 Q200,108 335,45" fill="none" stroke="#e53935" stroke-width="3"/>
-          <path d="M335,180 Q200,112 85,50" fill="none" stroke="#1e88e5" stroke-width="3"/>
-          <circle cx="210" cy="110" r="4" fill="#333"/>
-          <text x="222" y="100" font-size="11" fill="#e53935">interface states</text>
-        </svg>
-        <div class="card-body">
-          <h3>ML-Driven Discovery in Chiral Magnets</h3>
-          <p>Quantum Chiraltronics Group at USF. A high-throughput Python/ASE
-          pipeline evaluating 13,000+ B20 CoGe grain boundaries: SOAP
-          descriptors and farthest-point sampling map the structural latent
-          space, and targeted VASP calculations on the CIRCE cluster build the
-          DFT baseline for machine-learned topological tight-binding models.</p>
+    <section class="about section-pad">
+      <div class="section-label">About / 00</div>
+      <div class="about-grid">
+        <div class="portrait" id="portrait">
+          <img src="MY_HEADSHOT.png" alt="Portrait of Calvin" id="headshot">
+          <span id="portrait-fallback" hidden>ADD<br>MY_HEADSHOT.png<br>HERE</span>
         </div>
-      </div>
-
-      <div class="card">
-        <!-- Endotaxial REU: replace this SVG with your poster figure if you have one -->
-        <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="220" fill="#ffffff"/>
-          <g stroke="#1a1a1a" stroke-width="1.5">
-            <path d="M120,150 L200,180 L280,150 L200,120 Z" fill="#26a69a"/>
-            <path d="M120,110 L200,140 L280,110 L200,80 Z" fill="#4db6ac"/>
-            <path d="M120,70 L200,100 L280,70 L200,40 Z" fill="#80cbc4"/>
-          </g>
-          <text x="305" y="155" font-size="12" fill="#333">2H</text>
-          <text x="305" y="115" font-size="12" fill="#333">1T</text>
-          <text x="305" y="75" font-size="12" fill="#333">2H</text>
-          <text x="200" y="205" font-size="12" fill="#333" text-anchor="middle">layer-by-layer polytype switching</text>
-        </svg>
-        <div class="card-body">
-          <h3>Screening for Endotaxial Materials</h3>
-          <p>NSF REU, Wenhao Sun Lab, University of Michigan. High-throughput
-          ab initio screening of 150+ undocumented 2D TMD phases for
-          thermo-driven phase transitions and charge density waves, validating
-          an inexpensive Debye-plus-elastic-tensor phonon model to screen
-          transitions across thousands of candidate materials.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <!-- X-MTI: replace this SVG with a real figure when you have one -->
-        <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="220" fill="#ffffff"/>
-          <rect x="70" y="120" width="260" height="55" fill="#7e57c2"/>
-          <text x="200" y="152" font-size="14" fill="#fff" text-anchor="middle">Co-doped Bi&#8322;Se&#8323;</text>
-          <rect x="70" y="70" width="260" height="50" fill="#90a4ae"/>
-          <text x="200" y="98" font-size="14" fill="#fff" text-anchor="middle">Ni / Fe</text>
-          <line x1="200" y1="120" x2="200" y2="175" stroke="#fff" stroke-width="2" stroke-dasharray="5,4"/>
-          <g stroke="#e53935" stroke-width="2.5" fill="#e53935">
-            <line x1="110" y1="168" x2="110" y2="132"/><path d="M105,138 L110,128 L115,138 Z"/>
-            <line x1="155" y1="168" x2="155" y2="132"/><path d="M150,138 L155,128 L160,138 Z"/>
-          </g>
-          <g stroke="#1e88e5" stroke-width="2.5" fill="#1e88e5">
-            <line x1="245" y1="128" x2="245" y2="164"/><path d="M240,158 L245,168 L250,158 Z"/>
-            <line x1="290" y1="128" x2="290" y2="164"/><path d="M285,158 L290,168 L295,158 Z"/>
-          </g>
-          <text x="200" y="196" font-size="12" fill="#333" text-anchor="middle">magnetic domain wall</text>
-          <text x="200" y="40" font-size="13" fill="#333" text-anchor="middle">exchange-coupled heterostructure</text>
-        </svg>
-        <div class="card-body">
-          <h3>X-MTI: Domain Walls in Magnetic Topological Insulators</h3>
-          <p>A first-principles validation of a proposal for controllable
-          domain walls in magnetic topological insulators, using all-electron
-          DFT (FLEUR) on a simplified model of Co-doped Bi&#8322;Se&#8323;
-          interfaced with nickel or iron.</p>
-        </div>
-      </div>
-
-      <div class="card wide">
-        <!-- Save your photos into an images/ folder with these two names.
-             Other options: images/comsol_field.png, images/mu_histogram.png -->
-        <div class="figrow">
-          <div>
-            <img class="fig" src="images/telescope_geometry.png"
-                 alt="Anti-muon charge-selection telescope geometry"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="fig-fallback">Add images/telescope_geometry.png (the two-view geometry diagram)</div>
-          </div>
-          <div>
-            <img class="fig" src="images/geant4_tracks.png"
-                 alt="Geant4 simulation of muon tracks"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="fig-fallback">Add images/geant4_tracks.png (a Geant4 track render)</div>
+        <div class="about-statement">
+          <p class="lead">I&rsquo;m interested in the moment an abstract model becomes something you can point to: a surface state, a bent track, a clean curve, or a piece of hardware on the bench.</p>
+          <div class="about-columns">
+            <p>My current research connects crystal symmetry to observable electronic structure. I classify interfaces by their symmetry operations, track the chiral charges of multifold band nodes, and turn expensive quantum simulations into cheaper, physically transparent models.</p>
+            <p>Long term, I want to make high-throughput, machine-learning-driven materials discovery practical&mdash;using models that learn from first-principles data without giving up the physics that makes their predictions meaningful.</p>
           </div>
         </div>
-        <div class="card-body">
-          <h3>Cosmic-Ray Muon Telescope with Charge Discrimination</h3>
-          <p>Society of Physics Students at USF &mdash; Data Analysis Lead.
-          A two-counter coincidence telescope &mdash; a slit trigger counter
-          above an N52 permanent-magnet spectrometer and a CosmicWatch-style
-          detector below &mdash; that separates &#956;&#8314; from
-          &#956;&#8722; by their opposite deflection in the magnet gap. The
-          instrument was designed as its own digital twin first: a COMSOL
-          finite-element map of the magnet field is imported into a Geant4
-          Monte Carlo with cosmic-ray showers, which tunes the geometry,
-          quantifies &#956;&#8314;/&#956;&#8722; separation, and sets the
-          discriminator edge before any hardware is built.</p>
-        </div>
       </div>
+    </section>
 
+    <section class="work section-pad" id="work">
+      <div class="section-heading">
+        <div class="section-label">Selected work / 01&mdash;03</div>
+        <h2>Three questions I&rsquo;m chasing.</h2>
+      </div>
+      <div class="project-list">
+        <article class="project">
+          <span class="project-index">01</span>
+          <div class="project-title">
+            <p>Computational condensed matter</p>
+            <h3>Learning the landscape of chiral grain boundaries</h3>
+          </div>
+          <div class="project-copy">
+            <p>In the Quantum Chiraltronics Group at USF, I study how grain-boundary geometry changes Weyl points, electron transport, and surface states in topological chiral intermetallics. A high-throughput Python and ASE pipeline maps more than 13,000 B20 CoGe boundaries, using symmetry-aware descriptors to choose the most informative structures for first-principles calculations.</p>
+            <span>Boundary &rarr; symmetry &rarr; state</span>
+          </div>
+        </article>
+        <article class="project">
+          <span class="project-index">02</span>
+          <div class="project-title">
+            <p>First-principles electronic structure</p>
+            <h3>Domain walls in magnetic topological insulators</h3>
+          </div>
+          <div class="project-copy">
+            <p>X-MTI is a first-principles test of controllable domain walls in magnetic topological insulators. I use all-electron density functional theory to study a simplified Co-doped Bi<sub>2</sub>Se<sub>3</sub> interface with nickel or iron and ask which magnetic arrangements can support useful, localized electronic behavior.</p>
+            <span>Structure &rarr; magnetism &rarr; transport</span>
+          </div>
+        </article>
+        <article class="project">
+          <span class="project-index">03</span>
+          <div class="project-title">
+            <p>Experimental particle physics</p>
+            <h3>A cosmic-ray telescope, built as a digital twin first</h3>
+          </div>
+          <div class="project-copy">
+            <p>I am developing a two-counter scintillator muon telescope with a permanent-magnet spectrometer for charge discrimination. COMSOL field maps feed a Geant4 Monte Carlo so the geometry, trigger acceptance, and &mu;<sup>+</sup>/&mu;<sup>&minus;</sup> separation can be tuned before the first physical part is assembled.</p>
+            <span>Simulate &rarr; measure &rarr; build</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="visual-gallery section-pad" id="gallery">
+      <div class="section-heading gallery-heading">
+        <div class="section-label">Simulation gallery / 04</div>
+        <h2>The detector leaves drawings behind.</h2>
+        <p>These are not diagrams standing in for the work. They are the work: event displays, trajectories, and the geometry of what the instrument can actually observe.</p>
+      </div>
+      <div class="gallery-grid">
+        <button class="gallery-card gallery-feature" data-lightbox data-src="research/particle-burst.png" data-eyebrow="Geant4 / event view" data-title="A collision, unfolded" data-note="Every line is a particle history. The mess is the measurement." aria-label="Open A collision, unfolded">
+          <img src="research/particle-burst.png" alt="Color-coded particle tracks radiating from a simulated collision">
+          <span class="image-number">01</span>
+          <span class="gallery-caption"><small>Geant4 / event view</small><strong>A collision, unfolded</strong><span>Every line is a particle history. The mess is the measurement.</span></span>
+        </button>
+        <button class="gallery-card" data-lightbox data-src="research/charge-tracks-diagonal.png" data-eyebrow="Monte Carlo / charge study" data-title="Opposite bends" data-note="A diagonal view of charge-dependent trajectories through the apparatus." aria-label="Open Opposite bends">
+          <img src="research/charge-tracks-diagonal.png" alt="Red, blue, and yellow simulated particle tracks crossing a detector">
+          <span class="image-number">02</span>
+          <span class="gallery-caption"><small>Monte Carlo / charge study</small><strong>Opposite bends</strong><span>A diagonal view of charge-dependent trajectories through the apparatus.</span></span>
+        </button>
+        <button class="gallery-card" data-lightbox data-src="research/charge-tracks-horizontal.png" data-eyebrow="Geant4 / side elevation" data-title="Through the telescope" data-note="A sparse event makes the detector geometry legible." aria-label="Open Through the telescope">
+          <img src="research/charge-tracks-horizontal.png" alt="Side view of simulated tracks passing through detector volumes">
+          <span class="image-number">03</span>
+          <span class="gallery-caption"><small>Geant4 / side elevation</small><strong>Through the telescope</strong><span>A sparse event makes the detector geometry legible.</span></span>
+        </button>
+        <button class="gallery-card" data-lightbox data-src="research/detector-event.png" data-eyebrow="Detector acceptance" data-title="One useful event" data-note="The tracks that pass the trigger tell us what the hardware can see." aria-label="Open One useful event">
+          <img src="research/detector-event.png" alt="Simulated particle shower passing through green detector planes">
+          <span class="image-number">04</span>
+          <span class="gallery-caption"><small>Detector acceptance</small><strong>One useful event</strong><span>The tracks that pass the trigger tell us what the hardware can see.</span></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="blueprint-break">
+      <img src="research/muon-blueprint.png" alt="Two-view engineering reference for an anti-muon charge-selection telescope">
+      <div class="blueprint-caption"><span>Built to scale</span><p>Anti-muon charge-selection telescope / geometry reference</p></div>
+    </section>
+
+    <section class="graphs section-pad" id="graphs">
+      <div class="section-heading graphs-heading">
+        <div class="section-label">Cool graphs / 05</div>
+        <h2>Because sometimes the plot is the point.</h2>
+        <p>A small collection of figures I keep coming back to&mdash;not only for what they say, but for how they make an invisible system readable.</p>
+      </div>
+      <div class="graph-grid">
+        <button class="graph-card" data-lightbox data-src="research/magnetic-field-map.png" data-eyebrow="COMSOL / field solution" data-title="The invisible geometry" data-note="Field lines expose where the permanent magnet does its useful work." aria-label="Open The invisible geometry">
+          <div class="graph-image"><img src="research/magnetic-field-map.png" alt="Magnetic field simulation with white field lines around a magnet assembly"><span>01</span></div>
+          <div class="graph-copy"><small>COMSOL / field solution</small><h3>The invisible geometry</h3><p>Field lines expose where the permanent magnet does its useful work.</p></div>
+        </button>
+        <button class="graph-card" data-lightbox data-src="research/flux-density.png" data-eyebrow="Flux density / arc length" data-title="A family of plateaus" data-note="Same field, many slices—an unusually satisfying stack of curves." aria-label="Open A family of plateaus">
+          <div class="graph-image"><img src="research/flux-density.png" alt="Line plot of magnetic flux density along several paths"><span>02</span></div>
+          <div class="graph-copy"><small>Flux density / arc length</small><h3>A family of plateaus</h3><p>Same field, many slices&mdash;an unusually satisfying stack of curves.</p></div>
+        </button>
+        <button class="graph-card" data-lightbox data-src="research/charge-overlap.png" data-eyebrow="Muon separation / probability" data-title="Where two populations part" data-note="A discriminator edge turns a small spatial shift into a measurable signal." aria-label="Open Where two populations part">
+          <div class="graph-image"><img src="research/charge-overlap.png" alt="Overlapping histograms for positive and negative muon positions"><span>03</span></div>
+          <div class="graph-copy"><small>Muon separation / probability</small><h3>Where two populations part</h3><p>A discriminator edge turns a small spatial shift into a measurable signal.</p></div>
+        </button>
+      </div>
+    </section>
+
+    <section class="art section-pad" id="art">
+      <div class="art-intro">
+        <div class="section-label">Artwork / 06</div>
+        <h2>The other way I look closely.</h2>
+        <p>Drawing is part of how I notice structure. This will be a living wall for sketches, studies, and whatever I&rsquo;m making away from the lab.</p>
+      </div>
+      <div class="art-grid">
+        <figure class="art-slot"><img src="art/artwork-01.png" alt="Artwork 01 by Calvin"><figcaption><span>01</span><strong>Canvas reserved</strong><small>artwork-01.png</small></figcaption></figure>
+        <figure class="art-slot"><img src="art/artwork-02.png" alt="Artwork 02 by Calvin"><figcaption><span>02</span><strong>Canvas reserved</strong><small>artwork-02.png</small></figcaption></figure>
+        <figure class="art-slot"><img src="art/artwork-03.png" alt="Artwork 03 by Calvin"><figcaption><span>03</span><strong>Canvas reserved</strong><small>artwork-03.png</small></figcaption></figure>
+      </div>
+      <p class="art-note">Three frames are ready now. Add more whenever the sketchbook grows.</p>
+    </section>
+
+    <footer>
+      <div><span class="footer-mark">CALVIN / 2026</span><p>Physics, mathematics, simulations, sketches.</p></div>
+      <a href="#top">Back to top &uarr;</a>
+    </footer>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image">Close &times;</button>
+    <div class="lightbox-inner">
+      <img id="lightbox-image" src="" alt="">
+      <div><small id="lightbox-eyebrow"></small><h3 id="lightbox-title"></h3><p id="lightbox-note"></p></div>
     </div>
-
   </div>
-
 </body>
 </html>
